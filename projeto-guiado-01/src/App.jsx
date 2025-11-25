@@ -1,6 +1,8 @@
 import "./App.css";
-
 import Card from "./components/Card";
+import { useState } from "react";
+import Card from "./components/Card";
+import SearchBar from "./components/SearchBar";
 
 const listCars = [
   {
