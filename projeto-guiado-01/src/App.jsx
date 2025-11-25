@@ -1,5 +1,4 @@
 import "./App.css";
-import Card from "./components/Card";
 import { useState } from "react";
 import Card from "./components/Card";
 import SearchBar from "./components/SearchBar";
@@ -52,10 +51,12 @@ return (
 	  <h1>Anúncios Recentes</h1>
 	    <SearchBar handleSearch={handleSearch} />
 	  <div className='cards'>
-		{listCars.map((car) => (
+		{cars.map((car) => (
 		  <Card key={car.id} car={car} />
 		))}
 	  </div>
 	</>
   );
 }
+
+export default App;
