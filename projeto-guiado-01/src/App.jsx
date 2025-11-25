@@ -36,9 +36,21 @@ const listCars = [
 
 const App = () => {
 
+	const [cars, setCars] = useState(listCars);
+
+    const handleSearch = (query) => {
+        if (query === '') {
+            setCars(listCars);
+            return;
+        }
+
+	    setCars(listCars.filter(car => car.model.includes(query)));
+   }
+
 return (
 	<>
 	  <h1>Anúncios Recentes</h1>
+	    <SearchBar handleSearch={handleSearch} />
 	  <div className='cards'>
 		{listCars.map((car) => (
 		  <Card key={car.id} car={car} />
